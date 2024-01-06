@@ -1,4 +1,5 @@
 'use client'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Callout, Text, TextField } from '@radix-ui/themes'
 import axios from 'axios'
 import 'easymde/dist/easymde.min.css'
@@ -6,9 +7,8 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import SimpleMDE from 'react-simplemde-editor'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { createIssueSchema } from '../../validationSchemas/createIssueSchema'
 import z from 'zod'
+import { createIssueSchema } from '../../validationSchemas/createIssueSchema'
 
 type IssueForm = z.infer<typeof createIssueSchema>
 
