@@ -25,6 +25,7 @@ const NewIssuePage = () => {
 
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+
   const onSubmit: SubmitHandler<IssueForm> = async (data) => {
     try {
       setIsSubmitting(true)
