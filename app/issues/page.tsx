@@ -44,5 +44,5 @@ const Issues = async () => {
     </div>
   )
 }
-
+export const dynamic = 'force-dynamic'
 export default Issues
