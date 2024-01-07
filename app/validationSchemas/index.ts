@@ -1,1 +1,1 @@
-export * from './createIssue.schema'
+export * from './issue.schema'
