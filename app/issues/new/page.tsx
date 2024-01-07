@@ -8,9 +8,8 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod'
-import ErrorMessage from '../../components/ErrorMessage'
-import Spinner from '../../components/Spinner'
-import { createIssueSchema } from '../../validationSchemas/createIssueSchema'
+import { ErrorMessage, Spinner } from '@/app/components'
+import { createIssueSchema } from '@/app/validationSchemas'
 
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), {
   ssr: false,
