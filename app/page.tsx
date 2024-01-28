@@ -11,11 +11,16 @@ export default async function Home() {
   const inProgress = await prisma.issue.count({
     where: { status: Status.IN_PROGRESS },
   })
+  const issues = {
+    open,
+    closed,
+    inProgress,
+  }
   return (
     <Grid columns={{ initial: '1', md: '2' }} gap='5'>
       <Flex direction='column' gap='5'>
-        <IssueSummary open={open} closed={closed} inProgress={inProgress} />
-        <IssueChart open={open} closed={closed} inProgress={inProgress} />
+        <IssueSummary issues={issues} />
+        <IssueChart issues={issues} />
       </Flex>
       <LatestIssues />
     </Grid>

@@ -2,27 +2,27 @@ import { Status } from '@prisma/client'
 import { Card, Flex, Text } from '@radix-ui/themes'
 import Link from 'next/link'
 import React from 'react'
-interface Props {
+interface Issues {
   open: number
   closed: number
   inProgress: number
 }
 
-const IssueSummary = ({ open, closed, inProgress }: Props) => {
+const IssueSummary = ({ issues }: { issues: Issues }) => {
   const containers: { label: string; value: number; status: Status }[] = [
     {
       label: 'Open Issues',
-      value: open,
+      value: issues.open,
       status: Status.OPEN,
     },
     {
       label: 'In-progress Issues',
-      value: inProgress,
+      value: issues.inProgress,
       status: Status.IN_PROGRESS,
     },
     {
       label: 'Closed Issues',
-      value: closed,
+      value: issues.closed,
       status: Status.CLOSED,
     },
   ]
